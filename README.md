@@ -31,6 +31,16 @@
 ## Frontend
 
 <details>
+<summary>HTML CSS JS</summary>
+<br>
+
+> ### **`HTML CSS JS`** :
+**`CAUTION :`** Don't waste much time in HTML and CSS as you will learn them along the way, focus more on the basics of JavaScript. <br>
+**`ADVICE :`** You will definitely always feel underconfident about HTML CSS JS but after making some basic projects move on to React.js as you will learn them along the way,
+- [W3SCHOOLS](https://www.w3schools.com/html/default.asp)
+
+</details>
+<details>
 <summary>Animation in CSS</summary>
 <br>
   
@@ -53,6 +63,89 @@
 <br>
 [Motion Graphic Design & Animation Principles Website - Zajno Digital Studio](https://motion.zajno.com/)
 </details>
+<details>
+<summary>Roadmap to React</summary>
+<br>
+
+> ### **`Roadmap to React`** :
+
+1. Introduction to React.js
+- What is React.js?
+- Virtual DOM and its benefits
+- JSX syntax
+2. Setting Up the Development Environment
+- Basic idea of Node.js and npm installation
+- Create React App
+- Project structure
+3. Components and Props
+- Functional components
+- Class components
+- Props and PropTypes
+4. State and Lifecycle
+- Component state
+- Lifecycle methods
+- Updating and unmounting
+5. Handling Events
+- Event handling in React
+- Synthetic events
+- Binding methods
+6. Conditional Rendering
+- If-else conditions
+- Ternary operators
+- Logical && operator
+7. Lists and Keys
+- Rendering lists
+- Adding keys for optimization
+- Using map() function
+8. Forms and Controlled Components
+- Form handling in React
+- Controlled vs. uncontrolled components
+- Form validation
+9. State Management with Redux (Optional)
+- Redux concepts: store, actions, reducers
+- Connecting React with Redux
+- Async actions with middleware
+10. Routing with React Router (Optional)
+- Setting up React Router
+- Creating routes and navigation
+- Route parameters and query strings
+11. Styling and CSS-in-JS
+- Styling approaches in React
+- CSS modules
+- Styled-components
+12. API Integration
+- Making API requests with Axios or Fetch
+- Handling responses and errors
+- Asynchronous data fetching
+13. Context API (Alternative to Redux)
+- Global state management with Context API
+- Creating contexts and providers
+- Consuming context in components
+14. Hooks
+- useState, useEffect, and more
+- Custom hooks
+- Rules of hooks
+15. Optimization and Performance
+- Memoization and useCallback
+- PureComponent and React.memo
+- Performance profiling
+16. Testing React Applications
+- Unit testing with Jest and React Testing Library
+- Testing components and interactions
+17. Deployment
+- Building for production
+- Deployment options (e.g., Netlify, Vercel)
+
+5 Projects to Try:
+
+1. To-Do List App
+2. E-commerce Product Catalog
+3. Weather App
+4. Blog Platform
+5. GitHub Repository Viewer
+
+</details>
+
 
 <details>
 <summary>tools/websites</summary>
