@@ -677,3 +677,5 @@ Reference ==> [Ethical hacking techniques - DEV Community](https://dev.to/snyk/e
 
 >[Creating a game in Three.js - LogRocket Blog](https://blog.logrocket.com/creating-game-three-js/)
 
+>[How CloudFlare Processes a Million Logs per Second (quastor.org)](https://blog.quastor.org/p/cloudflare-processes-million-logs-per-second)
+
