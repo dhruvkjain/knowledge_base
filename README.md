@@ -153,6 +153,7 @@
 
 - [Free for Developers (free-for.dev)](https://free-for.dev/#/)
 - [Motion Graphic Design & Animation Principles Website - Zajno Digital Studio](https://motion.zajno.com/)
+- [No-code Animations](https://www.typefaceanimator.com/)
 - [WEB Free Fonts for Windows and Mac / Font free Download - OnlineWebFonts.COM](https://www.onlinewebfonts.com/fonts)
 - [Animated logos & stickers](https://www.lottielab.com/)
 - [Dribbble](https://dribbble.com/shots)
@@ -184,6 +185,7 @@
 <br>
   
 - [tympanus](https://tympanus.net/codrops/)
+- [No-code Animations](https://www.typefaceanimator.com/)
 
 </details>
 
