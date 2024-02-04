@@ -662,6 +662,8 @@ Reference ==> [Ethical hacking techniques - DEV Community](https://dev.to/snyk/e
 ## Random
 
 > [Sharing a state between windows without a server - DEV Community](https://dev.to/notachraf/sharing-a-state-between-windows-without-a-serve-23an)
+
+> [JWT - authentication used in WebDev](https://dev.to/irakan/is-jwt-really-a-good-fit-for-authentication-1khm) 
  
 > [How to Manipulate the DOM in JavaScript – Most Commonly Used Techniques (freecodecamp.org)](https://www.freecodecamp.org/news/javascript-document-object-model-explained/)
 
