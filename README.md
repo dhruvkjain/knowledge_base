@@ -177,6 +177,7 @@
 - [Free Mockups](https://www.mockupworld.co/)
 - [Design Inspo](https://savee.it/)
 - [51 CSS Animations on Scroll Your Visitors Will Love (sliderrevolution.com)](https://www.sliderrevolution.com/resources/css-animations-on-scroll/)
+- [CSS jokes](https://comicss.art/)
 
 </details>
 
