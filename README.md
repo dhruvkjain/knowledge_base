@@ -155,6 +155,7 @@
 - [Motion Graphic Design & Animation Principles Website - Zajno Digital Studio](https://motion.zajno.com/)
 - [No-code Animations](https://www.typefaceanimator.com/)
 - [WEB Free Fonts for Windows and Mac / Font free Download - OnlineWebFonts.COM](https://www.onlinewebfonts.com/fonts)
+- [Free Font Downloads](https://www.freefaces.gallery/)
 - [Animated logos & stickers](https://www.lottielab.com/)
 - [Dribbble](https://dribbble.com/shots)
 - [CHEATSHEATS](https://overapi.com/)
