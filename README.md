@@ -168,6 +168,7 @@
 - [Create images of your code](https://ray.so/)
 - [Color Palettes](https://coolors.co/)
 - [Color Palettes](https://palettemaker.com/)
+- [Icons SVG](https://icones.js.org/)
 - [Icons](https://iconer.app/)
 - [To create shadows Neumorphism](https://neumorphism.io/#e0e0e0)
 - [Free Assests](https://www.waveindex.com/collections/freebies)
