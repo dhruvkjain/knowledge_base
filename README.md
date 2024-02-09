@@ -145,8 +145,6 @@
 5. GitHub Repository Viewer
 
 </details>
-
-
 <details>
 <summary>tools/websites</summary>
 <br>
@@ -178,8 +176,16 @@
 - [Archive Images](https://picryl.com/)
 - [Free Mockups](https://www.mockupworld.co/)
 - [Design Inspo](https://savee.it/)
-- [51 CSS Animations on Scroll Your Visitors Will Love (sliderrevolution.com)](https://www.sliderrevolution.com/resources/css-animations-on-scroll/)
+
 - [CSS jokes](https://comicss.art/)
+
+</details>
+<details>
+<summary>Articles</summary>
+<br>
+
+- [51 CSS Animations on Scroll Your Visitors Will Love (sliderrevolution.com)](https://www.sliderrevolution.com/resources/css-animations-on-scroll/)
+- [How To Use Preload and Prefetch in HTML to Load Assets](https://www.digitalocean.com/community/tutorials/html-preload-prefetch)
 
 </details>
 
