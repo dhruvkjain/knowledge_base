@@ -652,6 +652,21 @@ Reference ==> [Ethical hacking techniques - DEV Community](https://dev.to/snyk/e
     - Stenography
 
 </details>
+<details>
+<summary>Tools/website to learn</summary>
+<br>
+
+- Shodan is a search engine for internet-connected devices, providing information about their vulnerabilities. Features include device search, banner parsing, and an API for developers.
+- [TryHackMe (for learning) ](https://tryhackme.com/)
+- [HACKSPLAINING (for learning) ](https://www.hacksplaining.com/)
+
+
+</details>
+
+
+
+
+
 
 
 
@@ -665,6 +680,8 @@ Reference ==> [Ethical hacking techniques - DEV Community](https://dev.to/snyk/e
 ## Random
 
 > [Sharing a state between windows without a server - DEV Community](https://dev.to/notachraf/sharing-a-state-between-windows-without-a-serve-23an)
+
+>[How CloudFlare Processes a Million Logs per Second (quastor.org)](https://blog.quastor.org/p/cloudflare-processes-million-logs-per-second)
 
 > [JWT - authentication used in WebDev](https://dev.to/irakan/is-jwt-really-a-good-fit-for-authentication-1khm) 
  
@@ -684,5 +701,7 @@ Reference ==> [Ethical hacking techniques - DEV Community](https://dev.to/snyk/e
 
 >[Creating a game in Three.js - LogRocket Blog](https://blog.logrocket.com/creating-game-three-js/)
 
->[How CloudFlare Processes a Million Logs per Second (quastor.org)](https://blog.quastor.org/p/cloudflare-processes-million-logs-per-second)
+>[Text to stories for socials](https://predis.ai/)
+
+>[search word to get some movie clip](https://getyarn.io/)
 
