@@ -8,6 +8,7 @@
 - This knowledge base contains random methods and resources which I discovered and found worth notice. Some of them may be too basic and some may be too difficult so just read along.
 - I have tried my best to keep all this in simpliest and easiest form.
 - [For All Roadmaps](https://roadmap.sh/)
+- [Learn all about development](https://levelup.video/)
 
 ## Table of Content :
 - [Frontend](#frontend)
