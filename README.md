@@ -688,7 +688,13 @@ Reference ==> [Ethical hacking techniques - DEV Community](https://dev.to/snyk/e
 
 > [Sharing a state between windows without a server - DEV Community](https://dev.to/notachraf/sharing-a-state-between-windows-without-a-serve-23an)
 
->[How CloudFlare Processes a Million Logs per Second (quastor.org)](https://blog.quastor.org/p/cloudflare-processes-million-logs-per-second)
+> [How CloudFlare Processes a Million Logs per Second (quastor.org)](https://blog.quastor.org/p/cloudflare-processes-million-logs-per-second)
+
+> [To make README easily](https://readme.so/editor)
+
+> [To make flowcharts (Excalidraw)](https://excalidraw.com/)
+
+> [To make flowcharts (Lucidchart)](https://www.lucidchart.com/pages/)
 
 > [JWT - authentication used in WebDev](https://dev.to/irakan/is-jwt-really-a-good-fit-for-authentication-1khm) 
  
