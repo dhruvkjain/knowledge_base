@@ -161,6 +161,7 @@
 - [Logo Maker](https://www.shopify.com/tools/logo-maker)
 - [Illustrations](http://storyset.com)
 - [Illustrations](https://sapiens.ui8.net/6f3c3c2)
+- [Illustrations and assests](https://ultima.storytale.io/)
 - [3D Illustrations](http://pixcap.com)
 - [FFFuel](https://fffuel.co/)
 - [PatternPad - Create beautiful patterns for presentations, social media or branding.](https://patternpad.com/)
