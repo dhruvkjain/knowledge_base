@@ -15,6 +15,7 @@
 - [Node.js](#nodejs)
 - [MongoDB](#mongodb)
 - [Ethical Hacking](#ethical-hacking)
+- [Github](#github)
 - [Random](#random)
 
 
@@ -670,6 +671,26 @@ Reference ==> [Ethical hacking techniques - DEV Community](https://dev.to/snyk/e
 
 
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## GitHub
+- `git reset HEAD~1`: To unstage local change (only 1) from commits
+
+
+
+
 
 
 
