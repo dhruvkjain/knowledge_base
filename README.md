@@ -11,12 +11,33 @@
 - [Learn all about development](https://levelup.video/)
 
 ## Table of Content :
+- [DSA](#dsa)
 - [Frontend](#frontend)
 - [Node.js](#nodejs)
 - [MongoDB](#mongodb)
+- [AI + Web-Dev](#ai-and-webdev)
 - [Ethical Hacking](#ethical-hacking)
 - [Github](#github)
 - [Random](#random)
+
+
+
+
+
+
+
+
+## DSA
+
+<details>
+<summary>websites</summary>
+
+> [Visualize algorithms](https://visualgo.net/en)
+
+</details>
+
+
+
 
 
 
@@ -159,6 +180,7 @@
 - [Animated logos & stickers](https://www.lottielab.com/)
 - [Dribbble](https://dribbble.com/shots)
 - [CHEATSHEATS](https://overapi.com/)
+- [CHEATSHEATS](https://quickref.me/)
 - [Logo Maker](https://www.shopify.com/tools/logo-maker)
 - [Illustrations](http://storyset.com)
 - [Illustrations](https://sapiens.ui8.net/6f3c3c2)
@@ -189,6 +211,9 @@
 
 - [51 CSS Animations on Scroll Your Visitors Will Love (sliderrevolution.com)](https://www.sliderrevolution.com/resources/css-animations-on-scroll/)
 - [How To Use Preload and Prefetch in HTML to Load Assets](https://www.digitalocean.com/community/tutorials/html-preload-prefetch)
+- [useLayoutEffect and useEffect.](https://www.instagram.com/p/C2kaG8HgKPH/)
+- Worker script and generator function in JavaScript.
+- Suspense in react
 
 </details>
 
@@ -444,6 +469,8 @@ const requestData = {
 
 >[Optimization killers · petkaantonov/bluebird Wiki (github.com)](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)
 
+>[Redis uses](https://www.instagram.com/p/C2ILjZErICX/)
+
 
 </details>
 
@@ -561,6 +588,41 @@ then to find name XYZ use ```.find({ "details.name" : "XYZ" })```
 - ```db.collection_name.updateOne({ field_to_find: "value" } , {$push: {array : {$each: ["element1","element2","element3"]} })``` to add element1 2 3 to an array where there is a "field_to_find" field with value  = value 
 
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## AI and WebDev
+<details>
+<summary>Courses</summary>
+	
+> ### **`A Google's developer course`** :
+-[Machine Learning for Web Developers (Web ML)](https://m.youtube.com/playlist?list=PLOU2XLYxmsILr3HQpqjLAUkIPa5EaZiui)
+
+</details>
+<summary>Tools</summary>
+	
+-[Vercel - v0 (generates react code on prompt)](https://v0.dev/)
+
+</details>
+
+
+
+
 
 
 
@@ -712,13 +774,17 @@ Reference ==> [Ethical hacking techniques - DEV Community](https://dev.to/snyk/e
 
 > [How CloudFlare Processes a Million Logs per Second (quastor.org)](https://blog.quastor.org/p/cloudflare-processes-million-logs-per-second)
 
+> [CHEATSHEATS](https://overapi.com/)
+
+> [CHEATSHEATS](https://quickref.me/)
+
+> [JWT - authentication used in WebDev](https://dev.to/irakan/is-jwt-really-a-good-fit-for-authentication-1khm) 
+
 > [To make README easily](https://readme.so/editor)
 
 > [To make flowcharts (Excalidraw)](https://excalidraw.com/)
 
 > [To make flowcharts (Lucidchart)](https://www.lucidchart.com/pages/)
-
-> [JWT - authentication used in WebDev](https://dev.to/irakan/is-jwt-really-a-good-fit-for-authentication-1khm) 
  
 > [How to Manipulate the DOM in JavaScript – Most Commonly Used Techniques (freecodecamp.org)](https://www.freecodecamp.org/news/javascript-document-object-model-explained/)
 
