@@ -201,7 +201,7 @@
 - [Archive Images](https://picryl.com/)
 - [Free Mockups](https://www.mockupworld.co/)
 - [Design Inspo](https://savee.it/)
-
+- [HTML Templates](https://htmlrev.com/)
 - [CSS jokes](https://comicss.art/)
 
 </details>
