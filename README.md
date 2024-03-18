@@ -174,6 +174,7 @@
 
 - [Free for Developers (free-for.dev)](https://free-for.dev/#/)
 - [Motion Graphic Design & Animation Principles Website - Zajno Digital Studio](https://motion.zajno.com/)
+- [list of new tools to use in websites](https://www.pillarstack.com/)
 - [No-code Animations](https://www.typefaceanimator.com/)
 - [WEB Free Fonts for Windows and Mac / Font free Download - OnlineWebFonts.COM](https://www.onlinewebfonts.com/fonts)
 - [Free Font Downloads](https://www.freefaces.gallery/)
@@ -614,6 +615,7 @@ then to find name XYZ use ```.find({ "details.name" : "XYZ" })```
 -[Machine Learning for Web Developers (Web ML)](https://m.youtube.com/playlist?list=PLOU2XLYxmsILr3HQpqjLAUkIPa5EaZiui)
 
 </details>
+<details>
 <summary>Tools</summary>
 	
 -[Vercel - v0 (generates react code on prompt)](https://v0.dev/)
