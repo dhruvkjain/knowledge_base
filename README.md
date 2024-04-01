@@ -12,10 +12,12 @@
 
 ## Table of Content :
 - [DSA](#dsa)
+- [UI/UX](#uiux)
 - [Frontend](#frontend)
 - [Node.js](#nodejs)
 - [MongoDB](#mongodb)
 - [AI + Web-Dev](#ai-and-webdev)
+- [AI/ML](#aiml)
 - [Ethical Hacking](#ethical-hacking)
 - [Github](#github)
 - [Random](#random)
@@ -32,7 +34,28 @@
 <details>
 <summary>websites</summary>
 
-> [Visualize algorithms](https://visualgo.net/en)
+- [Visualize algorithms](https://visualgo.net/en)
+- [Visualize DSA](https://csvistool.com/)
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+## UI/UX
+<details>
+<summary>learn UI/UX</summary>
+
+- [Laws of UX](https://lawsofux.com/)
 
 </details>
 
@@ -619,6 +642,28 @@ then to find name XYZ use ```.find({ "details.name" : "XYZ" })```
 <summary>Tools</summary>
 	
 -[Vercel - v0 (generates react code on prompt)](https://v0.dev/)
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## AI/ML
+<details>
+<summary>Learning</summary>
+	
+> ### **`Websites`** :
+- [Machine Learning for Web Developers (Web ML)](https://www.100daysofnocode.com/start-the-challenge)
 
 </details>
 
