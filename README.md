@@ -20,6 +20,7 @@
 - [AI/ML](#aiml)
 - [Ethical Hacking](#ethical-hacking)
 - [Github](#github)
+- [OS](#os)
 - [Random](#random)
 
 
@@ -987,6 +988,29 @@ Zero-Day Vulnerabilities:
 
 ## GitHub
 - `git reset HEAD~1`: To unstage local change (only 1) from commits
+
+
+
+
+
+
+
+
+
+
+
+
+
+## OS
+<details>
+<summary>Articles</summary>
+	
+- [Physical Cores vs Logical Cores](https://techgearoid.com/articles/difference-between-physical-cores-and-logical-processors/)
+
+
+</details>
+
+
 
 
 
