@@ -216,7 +216,558 @@ const requestData = {
 ```
 > In this code, we use square brackets `[]` around `req.body.field` to create a dynamic key based on the value of `req.body.field`, and then assign `req.body.value` as the value associated with that key. This will create a JSON object with the structure you desire.
 
+
+> TEMPLATE ENGINES : 
+
+Template engines are used to render dynamic pages which changes as values which are passed are changed.
+We will use Handlebars as our Template engine but , first we have to let node know that we are going to use which template engine.
+```javascript
+// app.set() includes all settings in node.js so we can set values according to our choice. 
+app.set('view engine' , 'hbs');
+app.set('views' , path.join(__dirname , 'views'));
+```
+
+> PROMISES :
+
+```javascript
+const promise1 = new Promise((resolve,reject)=>{
+	// Calculations
+	resolve(answer);
+})
+
+// result == answer
+promise1.then((result)=>{
+	console.log(result);
+})
+// OR
+const result = await promise1;
+```
+
+
 </details>
+
+
+
+
+
+<details>
+<summary>Authorization</summary>
+<br>
+
+
+> OAuth 2.0 code flow :
+
+![Pasted image 20240601011913](https://github.com/user-attachments/assets/399882cc-3444-4480-9367-a3fc089148d1)
+
+We can restrict an specific endpoint by passing a middleware for that endpoint
+```javascript
+function checkLoggedIn(req, res, next){
+	// necessary checks
+}
+
+function checkPermissions(req, res, next){
+	// necessary checks
+}
+
+app.get('/secret', checkLoggedIn, checkPermissions, (req, res) => {
+	// return back user data if logged in and has necessary permissions
+});
+
+app.get('/', (req, res)=>{
+	res.sendFile(path.join(__dirname , 'public'));
+});
+
+// Here '/secret' path is only accessible after necessary checks while '/' path is accessible by all users.
+```
+
+
+
+> JWT 
+
+JWT (JSON Web Token) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed.
+
+A JSON Web Token consists of three parts:
+1. **Header**
+2. **Payload**
+3. **Signature**
+These parts are separated by dots (`.`) and are represented as `header.payload.signature`.
+### Example Flow
+1. **User Logs In**: User provides credentials (username and password).
+2. **Server Verifies Credentials**: Server verifies the credentials and, if valid, creates a JWT.
+3. **Token Sent to User**: The JWT is sent back to the client.
+4. **Client Stores Token**: The client stores the token (e.g., in localStorage or cookies).
+5. **Subsequent Requests**: The client includes the token in the `Authorization` header of future requests.
+6. **Server Verifies Token**: The server verifies the token and processes the request.
+![Pasted image 20240727001647](https://github.com/user-attachments/assets/d6a1f38c-54a5-46e5-9f7f-9d4559e98890)
+
+
+
+Generate random secret key for digital signing (run in bash) :
+```bash
+openssl rand -base64 32
+```
+
+
+
+</details>
+
+
+
+
+
+
+
+
+<details>
+<summary>Socket</summary>
+<br>
+
+
+# Sockets :
+![Pasted image 20240524222520](https://github.com/user-attachments/assets/86338929-1bc3-4728-8c7a-bab2bb008308)
+
+
+[Learn Socket.io In 30 Minutes (youtube.com)](https://www.youtube.com/watch?v=ZKEqqIO7n-k&t=1032s)
+[Everything You Need To Know About Socket.IO - DEV Community](https://dev.to/ably/everything-you-need-to-know-about-socket-io-16nf)
+
+> **Note : `server.use()`/`io.use()` middleware runs before every *socket connection* but `socket.use()` middleware runs before every *packet* is received.**
+> 
+> therefore do authentication inside `server.use()`/`io.use()`.
+
+# How to send recieve cookies over socket :
+
+> Server Side :
+```javascript
+app.use(cors({
+  origin:'http://localhost:5173', // as 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request's credentials mode is 'include'.
+  credentials: true, // enable credentials
+}));
+
+
+
+// socket connection :
+
+const io = new Server(server, {
+    cors: {
+        origin: ['http://localhost:5173', 'https://admin.socket.io/', 'https://admin.socket.io/#/'],
+        credentials: true, // enable credentials
+    }
+});
+
+io.use((socket, next)=>{
+    console.log(socket.request.headers.cookie);
+    // verify the cookie here 
+    next();
+})
+```
+
+> Client Side :
+```javascript
+async function httpSignup(signupdetails: signupdetails) {
+    try {
+        const request = await fetch(`${APT_URL}/signup`, {
+            method: 'post',
+            credentials: 'include', // to get the cookies in Response Header
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(signupdetails),
+        });
+
+        const response = await request.json();
+        response.ok = true;
+        return response;
+    }
+
+    catch (err) {
+        return { error : "Server Error", ok: false }
+    }
+}
+
+
+
+// socket connetion :
+
+const createSocketConnection = () => {
+    socket = io('http://localhost:3000', {
+	    withCredentials: true // to pass cookies to socket
+    });
+}
+```
+
+
+</details>
+
+
+
+
+
+
+
+
+
+
+<details>
+<summary>Testing</summary>
+<br>
+
+
+> TESTING ( JEST ):
+
+- Test runner  : find test files (`jest`) .
+- Test fixtures : test fixture are functions which run test of respective modules (`describe()`).
+- Assertions   : function telling what we expect ( `expect(output).toBe(expected_value)` ).
+- Mocking     : where operations doesn't change our data in database permanently.
+```javascript
+describe('test group name', ()=>{
+
+	test('name of 1st test', ()=>{
+		const response = 200;
+		expect(response).toBe(200);
+	});
+	
+	test('name of 2nd test', ()=>{
+		// next test
+	});
+
+	// other tests
+})
+```
+
+> NOTE : 
+
+``` javascript
+"test": "jest",
+// npm run test ==> check only once
+"test-watch": "jest --watch"
+// npm run test-watch ==> check once and if respective modules/test is upated 
+```
+
+> SUPERTEST (for making a test request to our endpoints) : 
+
+``` javascript
+const request = require('supertest');
+const path = require('path');
+const { app } = require(path.join('..', '..', 'app.js'));
+
+describe('Test launches', () => {
+
+    const testlaunch = {
+        mission: "MSI 1",
+        rocket: "ISE 1",
+        launchDate: "January 17, 2030",
+        target: "Kepler-1410 b"
+    };
+
+    test('GET/launches', async () => {
+    
+        const response = await request(app)
+            .get('/launches')
+            .expect('Content-Type', /json/)
+            .expect(200);
+    });
+
+  
+
+    test('POST/launches 201 creation test', async () => {
+
+        const response = await request(app)
+            .post('/launches')
+            .send(testlaunch)
+            .expect('Content-Type', /json/)
+            .expect(201);
+            
+        const responseDate = new Date(response.body.launchDate).valueOf();
+        const ogDate = new Date(testlaunch.launchDate).valueOf();
+        
+        expect(responseDate).toBe(ogDate);
+        expect(response.body).toMatchObject({
+            mission: "MSI 1",
+            rocket: "ISE 1",
+            target: "Kepler-1410 b"
+        })
+    });
+
+  
+
+    test('POST/launches 400 catch missing properties error', async () => {
+
+        const testlaunch = {
+            mission: "MSI 1",
+            rocket: "ISE 1",
+            target: "Kepler-1410 b"
+        };
+        const response = await request(app)
+            .post('/launches')
+            .send(testlaunch)
+            .expect('Content-Type', /json/)
+            .expect(400);
+        expect(response.body).toStrictEqual({error: 'Insufficient data'})
+
+    });
+
+  
+
+    test('POST/launches 400 catch invalid Date error', async () => {
+
+        const testlaunch = {
+            mission: "MSI 1",
+            rocket: "ISE 1",
+            target: "Kepler-1410 b",
+            launchDate: "adfasd",
+        };
+
+        const response = await request(app)
+            .post('/launches')
+            .send(testlaunch)
+            .expect('Content-Type', /json/)
+            .expect(400);
+        expect(response.body).toBe('Wrong Date')
+        
+    });
+
+})
+```
+
+
+
+</details>
+
+
+
+
+
+<details>
+<summary>PERFORMANCE  OPTIMISATION</summary>
+<br>
+
+
+> PERFORMANCE  OPTIMISATION : 
+
+Node default Async process => FILE IO process , NETWORK process (like requesting or sending data over network) , 
+
+Node default Sync process  => LOOPS , SORT , `JSON.stringify()`, `JSON.parse()`, Cyptro functions (some key derivation functions which means they are used to make hash keys like -  `crypto.pbkdf2()` and `crypto.scrypt()` functions) . 
+
+*Example : if every `JSON.stringify() or JSON.parse()` takes 10ms and run on Sync Event loop thread then many request can pile up the delay.
+
+> CLUSTER (round-robin method):
+
+```
+node server.js --> master --> fork() worker
+						  --> fork() worker
+						  ....
+```
+***round-robin method*** --> first request goes to first worker, second request to second worker, and so on till end and then again to first worker.
+
+> PM2 (comes with build in clustering and is used to manage processes) :
+
+- pm2 with using node.js build in cluster module
+```javascript
+const express = require('express');
+const app = express();
+  
+const os = require('os');
+const cluster = require('cluster');
+  
+app.get('/',(req,res)=>{
+    res.send(`Performance example ${process.pid}`);
+});
+  
+app.get('/timer', (req,res)=>{
+    const starTime = Date.now();
+    while(Date.now() - starTime < 9000){
+    }
+    res.send(`delayed ${process.pid}`);
+})
+
+console.log('Running server.js');
+if(cluster.isPrimary){
+    console.log('Master ...');
+    const NUM_WORKER = os.cpus().length; // returns number of CPUS
+    for(let i=0; i<NUM_WORKER; i++){
+        cluster.fork();
+    }
+}
+else{
+    console.log('Worker ...');
+    app.listen(3000);
+}
+```
+---
+``` 
+pm2 start server.js --> starts cluster mode in server.js 
+					--> make worker process as defined in server.js
+
+pm2 stop server.js / id --> obviously stops the process but 
+							does not delete cluster from pm2 
+
+pm2 delete server.js --> stops and delete server.js cluster from 
+						 pm2
+
+pm2 list / pm2 staus --> print current online or stopped clusters
+
+pm2 restart server.js -->  Restarts the server after it is stopped
+
+
+
+pm2 logs --> list all logs
+
+pm2 logs --lines --> prints "lines" number of lines of logs. 
+
+pm2 start server.js -l logs.txt --> store logs in logs.txt
+```
+
+- using pm2
+
+```javascript
+const express = require('express');
+const app = express();
+
+app.get('/',(req,res)=>{
+    res.send(`Performance example ${process.pid}`);
+});
+
+app.get('/timer', (req,res)=>{
+    const starTime = Date.now();
+    while(Date.now() - starTime < 9000){
+    }
+    res.send(`delayed ${process.pid}`);
+})
+
+console.log('Running server.js');
+console.log('Worker ...');
+app.listen(3000);
+```
+---
+```
+But why we define cluster in server.js when pm2 can do it for us
+So remove all thing about cluster form server.js
+
+pm2 start server.js -i number_of_worker 
+--> starts instances(-i) / worker according to number of given
+
+pm2 start server.js -i max
+--> to start maximum number of processes
+
+
+pm2 show id_of_worker --> shows all data about that id worker.
+
+pm2 monit --> opens a live monitor for all processes.
+```
+
+> Zero Down Time approach :
+
+If we want to change some code in production and if all servers are restarted by **`pm2 restart server`** then for sometime no request will be processed so to handle this Zero Down Time approach is used **`pm2 reload server`** where , workers are restarted one by one.
+
+> Cluster vs Web Workers :
+
+Clusters works in single process and have build-in method to pass request to different worker but all worker don't share any data among them as each worker work on different thread on CPU cores.
+cluster module allows us to create child processes that all share server ports.
+
+In web worker all worker thread work independently and can share data among them. 
+[Process vs Thread (ByteByteGo)](https://www.youtube.com/watch?v=4rLW7zg21gI)
+
+```
+Cluster --> distribute work among processes (running on each core)
+worker thread --> distribute work among thread in a process.
+```
+![Pasted image 20240414184607](https://github.com/user-attachments/assets/c642f66d-068f-4612-bc0e-1855be135875)
+
+
+> WORKER THREADS 
+
+```javascript
+const {isMainThread , Worker} = require('worker_threads');
+
+// Syntax : new Worker(filename, [options])
+// Syntax : new Worker(path to file which will work this worker thread)
+
+new Worker(__filename); 
+// ==> this will make infinite number of worker threads as each thread will make new thread inshort it will f*ck up system at the end.
+
+// so like Cluster we will make Worker only if it is main thread
+
+if(isMainThread){
+	new Worker(__filename);
+	new Worker(__filename);
+}
+else{
+	console.log('Worker');
+}
+```
+---
+```javascript
+const {isMainThread , workerData, Worker} = require('worker_threads');
+
+if(isMainThread){
+    new Worker(__filename, {
+        workerData : [1,3,123,9,70]
+    });
+    new Worker(__filename, {
+        workerData : [45,2,12,0,-8]
+    });
+    console.log(`Main ${process.pid}`);
+}
+
+else{
+    console.log(`Worker ${process.pid}`);
+    console.log(`${workerData} sorted is : ${workerData.sort((a, b) => a - b)}`);
+}
+```
+OUTPUT : 
+```bash
+Main 17316
+Worker 17316
+1,3,123,9,70 sorted is : 1,3,9,70,123
+Worker 17316
+45,2,12,0,-8 sorted is : -8,0,2,12,45
+```
+
+> HELMET.js ([Helmet.js](https://helmetjs.github.io/))
+
+Helmet helps secure Express apps by setting HTTP response headers.
+
+
+
+> KNIP (Find unused files, dependencies and exports in JavaScript and TypeScript projects) :
+
+**NOTE : Knip is a static analysis tool and so can't recognize dynamic imports that use the `path` module or alias path**
+**Therefore don't use knip in frontend (as UI libraries like shadcn use alias or `*`(all) import)**
+
+```javascript
+// when you import using path module knip can't recognize the import 
+//  --------------** WRONG **-------------->
+const path = require('path'); 
+const mongoServices = require(path.join(__dirname, 'mongo.js')); 
+const socketServices = require(path.join(__dirname, 'socket.js')); 
+
+// but when you use relative path knip recognize it
+//  --------------** RIGHT **-------------->
+const mongoServices = require('./mongo.js'); 
+const socketServices = require('./socket.js');
+```
+
+To setup knip :
+- Run `npm init @knip/config` in terminal
+- make a file `knip.config.js`
+```javascript
+// knip.config.js :
+
+export default {
+    "entry": ["src/{server,app}.js", "src/config/index.js", "src/utils/index.js"],
+    "project": ["src/**/*.js"]
+}
+```
+
+**NOTE : all files in backend code folder with default export must be listed in entry field of knip config file**
+
+
+
+</details>
+
+
+
+
 
 <details>
 <summary>Articles/Blogs</summary>
@@ -230,4 +781,15 @@ const requestData = {
 
 
 </details>
+
+
+
+> Circular dependencies :
+> When 2 modules depends somehow on each other.
+
+![Pasted image 20240801182426](https://github.com/user-attachments/assets/71473081-0b85-4d3a-9075-4df2d7408cbd)
+
+
+
+
 
