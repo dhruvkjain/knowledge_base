@@ -1,15 +1,134 @@
 ## Frontend
 
 <details>
-<summary>HTML CSS JS</summary>
+<summary>Advice</summary>
 <br>
 
-> ### **`HTML CSS JS`** :
+> ### **`Advice`** :
 **`CAUTION :`** Don't waste much time in HTML and CSS as you will learn them along the way, focus more on the basics of JavaScript. <br>
 **`ADVICE :`** You will definitely always feel underconfident about HTML CSS JS but after making some basic projects move on to React.js as you will learn them along the way,
-- [W3SCHOOLS](https://www.w3schools.com/html/default.asp)
 
 </details>
+
+
+<details>
+<summary>Resources</summary>
+<br>
+
+> ### **`Resources`** :
+- Vite + Typescript : https://www.youtube.com/watch?v=665UnOGx3Pg
+- Next + Typescript : https://www.youtube.com/watch?v=TPACABQTHvM
+- <details>
+  <summary>Vite + Typescript + ShadcnUI :</summary>
+  <br>
+
+    Docs: [Vite - shadcn/ui](https://ui.shadcn.com/docs/installation/vite)
+    
+     - Step 1 :
+    Run below command to initialize and configure components.json
+    go for defaults in options ->
+    ```bash
+    npx shadcn-ui@latest init
+    ```
+    
+    - Step 2 :
+    Resolve import paths for library :
+    > NOTE : We have to resolve path for all `vite`, `tailwind` and `typescript` 
+    ```javascript
+    // tailwind.config.js ::
+    
+    content: [
+        "./index.html",
+        './pages/**/*.{ts,tsx}',
+        './@/components/**/*.{ts,tsx}',
+        './app/**/*.{ts,tsx}',
+        './src/**/*.{ts,tsx}',
+      ],
+    ```
+    ---
+    ```json
+    // tsconfig.app.json ::
+    
+    /*Paths for ShadcnUI*/
+        "baseUrl": ".",
+        "paths": {
+          "@/*": [
+            "./@/*"
+          ]
+        }
+      },
+      "include": ["src", "@"]
+    ```
+    ---
+    ```typescript
+    // vite.config.ts ::
+    
+    import path from "path"
+    import { defineConfig } from 'vite'
+    import react from '@vitejs/plugin-react'
+    
+    // https://vitejs.dev/config/
+    
+    export default defineConfig({
+      plugins: [react()],
+      resolve: {
+        alias: {
+          "@": path.resolve(__dirname, "./@"),
+        },
+      },
+    })
+    ```
+    
+    - Step 3 :
+    - Install components
+    ```bash
+    npx shadcn-ui@latest add [component]
+    ```
+    ```bash
+    Which components would you like to add? › Space to select. A to toggle all.Enter to submit.
+    ◯ accordion
+    ◯ alert
+    ◯ alert-dialog
+    ◯ aspect-ratio
+    ◯ avatar
+    ◯ badge
+    ◯ button
+    ◯ calendar
+    ◯ card
+    ◯ checkbox
+    ```
+    
+    - Step 4 :
+    ```typescript
+    import { useState } from 'react';
+    import { Button } from "@/components/ui/button"
+    
+    import { Person } from './components/Person.tsx';
+    
+    function App() {
+      const [value, setValue] = useState<boolean>(true);
+      
+      const toggleInfo = () => {
+        setValue((prev) => !prev)
+      }
+    
+      return (
+        <>
+          <div className=''>
+            <Person value={value} />
+          </div>
+          <Button onClick={toggleInfo}>Toggle value</Button>
+        </>
+      )
+    }
+    
+    export default App
+    ```
+
+</details>
+
+
+
 <details>
 <summary>Animation in CSS</summary>
 <br>
@@ -32,87 +151,97 @@
       - alternate-reverse: Similar to alternate, but it starts by running backward.
 <br>
 [Motion Graphic Design & Animation Principles Website - Zajno Digital Studio](https://motion.zajno.com/)
+[Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/)
 </details>
+
+
 <details>
-<summary>Roadmap to React</summary>
+<summary>Harkirat Roadmap for Full-Stack Development</summary>
 <br>
 
-> ### **`Roadmap to React`** :
+> ### **`Harkirat Roadmap for Full-Stack Development`** :
+### Basics ⇒
+  - Foundation
+    - Foundation Javascript, async nature of JS 
+    - Node.js and its runtime
+    - Databases (NoSQL/SQL)
+    - Mongo and Postgres deep dive
+    - Typescript beginner to advance
 
-1. Introduction to React.js
-- What is React.js?
-- Virtual DOM and its benefits
-- JSX syntax
-2. Setting Up the Development Environment
-- Basic idea of Node.js and npm installation
-- Create React App
-- Project structure
-3. Components and Props
-- Functional components
-- Class components
-- Props and PropTypes
-4. State and Lifecycle
-- Component state
-- Lifecycle methods
-- Updating and unmounting
-5. Handling Events
-- Event handling in React
-- Synthetic events
-- Binding methods
-6. Conditional Rendering
-- If-else conditions
-- Ternary operators
-- Logical && operator
-7. Lists and Keys
-- Rendering lists
-- Adding keys for optimization
-- Using map() function
-8. Forms and Controlled Components
-- Form handling in React
-- Controlled vs. uncontrolled components
-- Form validation
-9. State Management with Redux (Optional)
-- Redux concepts: store, actions, reducers
-- Connecting React with Redux
-- Async actions with middleware
-10. Routing with React Router (Optional)
-- Setting up React Router
-- Creating routes and navigation
-- Route parameters and query strings
-11. Styling and CSS-in-JS
-- Styling approaches in React
-- CSS modules
-- Styled-components
-12. API Integration
-- Making API requests with Axios or Fetch
-- Handling responses and errors
-- Asynchronous data fetching
-13. Context API (Alternative to Redux)
-- Global state management with Context API
-- Creating contexts and providers
-- Consuming context in components
-14. Hooks
-- useState, useEffect, and more
-- Custom hooks
-- Rules of hooks
-15. Optimization and Performance
-- Memoization and useCallback
-- PureComponent and React.memo
-- Performance profiling
-16. Testing React Applications
-- Unit testing with Jest and React Testing Library
-- Testing components and interactions
-17. Deployment
-- Building for production
-- Deployment options (e.g., Netlify, Vercel)
+  - Backend
+    - Backend communication protocols
+    - Express basic to advance
+    - ORMS
+    - Middlewares, routes, status codes, global catches
+    - Zod
+    - Husky
+    - MonoRepos, turborepo
+    - Serverless Backends
+    - OpenAPI Spec
+    - Autogenerated clients
+    - Authentication using external libraries
+    - Scaling Node.js, performance benchmarks 
+    - Deploying npm packages
 
-5 Projects to Try:
+  - Frontend
+    - Reconcilers and Frontend frameworks
+    - React beginner to advance
+    - Internals of state, Context API
+    - State management using recoil
+    - CSS you need to know of, Flexbox, basic styling
+    - Frontend UI frameworks, Deep dive into Tailwind 
+    - Containerization, Docker
+    - Next.js
+    - Custom hooks
+    - In house auth using next auth
 
-1. To-Do List App
-2. E-commerce Product Catalog
-3. Weather App
-4. Blog Platform
-5. GitHub Repository Viewer
+  - Basic Devops
+    - Docker end to end 
+    - Deploying to AWS servers 
+    - Newer clouds like fly/Remix 
+    - Nginx and reverse proxies
+
+  - Projects
+    - GSOC Project setting up and issue solving 
+    - Building Paytm/Wallet End to End
+
+### Advance ⇒
+  - Advanced Backend, System Design
+    - Advanced backend communication
+    - Message queues and PubSubs
+    - Proxies, Load balancers
+    - Redis Deep dive
+    - Kafka Deep dive
+    - Common Design Patterns in JS
+    - Advanced DB concepts (Indexing, normalization)
+    - Rate limiting
+    - Captchas and DDoS protection
+    - Sharding, Replication, Resiliency
+    - Horizontal and vertical scaling
+    - Polling and websockets
+    - Grpc
+    - Capacity Estimation Load Balancers
+    - CAP Theorem
+    - Testing Node.js Apps in 2023
+    - Real time communication, basics of WebRTC
+
+  - Advanced DevOps
+    - Docker Deep dive
+    - Container orchestration, Docker Swarm 
+    - Kubernetes
+    - CI/CD
+    - Monitoring systems basics to advance 
+    - Promhetheus, Grafana
+    - Newrelic as a paid service
+    - Serverless Deep dive
+    - AWS Constructs (EC2, S3, CDNs, LB, EKS)
+
+  - Projects
+    - Zerodha end to end
+    - Zapier end to end
+    - Real world open source projects
+
+
 
 </details>
 <details>
@@ -162,6 +291,12 @@
 - [useLayoutEffect and useEffect.](https://www.instagram.com/p/C2kaG8HgKPH/)
 - Worker script and generator function in JavaScript.
 - Suspense in react
+
+### Deployment of vite + react app : 
+  - [Deploying Vite App to GitHub Pages - DEV Community](https://dev.to/shashannkbawa/deploying-vite-app-to-github-pages-3ane)
+  - [React to Vercel: Deployment Made Easy. - DEV Community](https://dev.to/codeparrot/react-to-vercel-deployment-made-easy-bg2)
+  - [Changing the input and output directory in Vite - Stack Overflow](https://stackoverflow.com/questions/66863200/changing-the-input-and-output-directory-in-vite#:~:text=You%20can%20set%20up%20your%20vite.config.js%20like%20this%3A,root%3A%20path.resolve%28__dirname%2C%20%27src%27%29%2C%20build%3A%20%7B%20outDir%3A%20path.resolve%28__dirname%2C%20%27dist%27%29%2C)
+
 
 </details>
 
