@@ -12,10 +12,8 @@
 
 ## Table of Content :
 - [DSA](https://github.com/dhruvkjain/knowledge_base/tree/main/DSA)
+- [WebDev](https://github.com/dhruvkjain/knowledge_base/tree/main/WebDev)
 - [UI/UX](https://github.com/dhruvkjain/knowledge_base/tree/main/UI-UX)
-- [Frontend](https://github.com/dhruvkjain/knowledge_base/tree/main/Frontend)
-- [Node.js](https://github.com/dhruvkjain/knowledge_base/tree/main/Node.js)
-- [MongoDB](https://github.com/dhruvkjain/knowledge_base/tree/main/MongoDB)
 - [AI + Web-Dev](https://github.com/dhruvkjain/knowledge_base/tree/main/AI%20and%20WebDev)
 - [AI/ML](https://github.com/dhruvkjain/knowledge_base/tree/main/AI-ML)
 - [Ethical Hacking](https://github.com/dhruvkjain/knowledge_base/tree/main/Ethical%20Hacking)
