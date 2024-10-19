@@ -2,6 +2,54 @@
 
 > **`Note`** : .find() returns a cursor so use .find().forEach() while coding in backend. <br>
 > **`Start terminal`** : Type ```mongosh``` to enter mongodb shell
+
+# MONGOOSE : 
+
+```
+         --> Collection C1 --> { Documnets ==> D1 , D2 , D3 }
+DataBase --> Collection C2 --> { Documnets ==> D1 , D2 , D3 }
+         --> Collection C3 --> { Documnets ==> D1 , D2 , D3 }
+
+Every Collection on MongoDB ==> Every Model in Mongoose 
+Schema in Mongoose define schema of documents on MongoDB
+```
+
+## Connecting to Mongo By Mongoose :
+
+```node.js
+const mongoose = require('mongoose');
+
+const MONGO_URL = "mongodb+srv:// something ....";
+
+await mongoose.connect(MONGO_URL,{})
+.catch(err => console.log(err))
+.then(() => console.log("connected to DB"));
+console.log("after connection");
+
+// Below is code add event listener :
+mongoose.connection.on('error', err => {
+	console.error(err);
+});
+```
+
+## Schema and Model in Mongoose :
+refer : [Mongoose v8.3.3: Schemas (mongoosejs.com)](https://mongoosejs.com/docs/guide.html)
+```Javascript
+const mongoose = require('mongoose');
+
+const planetSchema = new mongoose.Schema({
+   kepler_name : {
+        type : String,
+        required: true
+   }
+})
+
+module.exports = mongoose.model('Planet', planetSchema);
+// so here instead of Planet name as collection planets
+// will be added to mongodb
+```
+
+
 <details>
 <summary>Basic commands</summary>
 <br>
@@ -16,6 +64,7 @@
 - ```use database_name```  then ```db.collection_name``` to move to collection_name collection
 
 </details>
+
 <details>
 <summary>Manipulating Docs of Collection</summary>
 <br>
