@@ -554,8 +554,8 @@ Node default Sync process  => LOOPS , SORT , `JSON.stringify()`, `JSON.parse()`,
 
 ```
 node server.js --> master --> fork() worker
-						  --> fork() worker
-						  ....
+			  --> fork() worker
+			  ....
 ```
 ***round-robin method*** --> first request goes to first worker, second request to second worker, and so on till end and then again to first worker.
 
